@@ -1,17 +1,20 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { context } from '@reatom/react';
 
-import "./index.css";
-import App from "./App";
-import { context } from "@reatom/react";
-import { store } from "./modules/app";
+import { App } from './containers/App/App';
+
+import { store } from '@/modules/app';
+import { MainPage } from '@/pages/MainPage/MainPage';
 
 const Root: React.FC = () => {
   return (
     <context.Provider value={store}>
-      <App />
+      <App>
+        <MainPage />
+      </App>
     </context.Provider>
   );
 };
 
-ReactDOM.render(<Root />, document.getElementById("root"));
+ReactDOM.render(<Root />, document.getElementById('root'));

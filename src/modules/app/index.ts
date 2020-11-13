@@ -1,3 +1,3 @@
-import { createStore } from "@reatom/core";
+import { createStore } from '@reatom/core';
 
 export const store = createStore();
