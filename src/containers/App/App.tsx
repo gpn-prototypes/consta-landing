@@ -1,4 +1,5 @@
 import './App.css';
+import './wtpr.css';
 
 import React, { useEffect } from 'react';
 import { cnTheme, Theme } from '@consta/uikit/Theme';
