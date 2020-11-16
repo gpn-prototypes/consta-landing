@@ -16,7 +16,7 @@ const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const getCSSModuleLocalIdent = require('react-dev-utils/getCSSModuleLocalIdent');
-const ESLintPlugin = require('eslint-webpack-plugin');
+// const ESLintPlugin = require('eslint-webpack-plugin');
 const paths = require('./paths');
 const modules = require('./modules');
 const getClientEnvironment = require('./env');
@@ -53,18 +53,20 @@ const cssModuleRegex = /\.module\.css$/;
 const sassRegex = /\.(scss|sass)$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
 
-const hasJsxRuntime = (() => {
-  if (process.env.DISABLE_NEW_JSX_TRANSFORM === 'true') {
-    return false;
-  }
+// const hasJsxRuntime = (() => {
+//   console.log('hasJsxRuntime');
+//   if (process.env.DISABLE_NEW_JSX_TRANSFORM === 'true') {
+//     console.log('false');
+//     return false;
+//   }
 
-  try {
-    require.resolve('react/jsx-runtime');
-    return true;
-  } catch (e) {
-    return false;
-  }
-})();
+//   try {
+//     require.resolve('react/jsx-runtime');
+//     return true;
+//   } catch (e) {
+//     return false;
+//   }
+// })();
 
 // This is the production and development configuration.
 // It is focused on developer experience, fast rebuilds, and a minimal bundle.
@@ -695,24 +697,24 @@ module.exports = function (webpackEnv) {
           // The formatter is invoked directly in WebpackDevServerUtils during development
           formatter: isEnvProduction ? typescriptFormatter : undefined,
         }),
-      new ESLintPlugin({
-        // Plugin options
-        extensions: ['js', 'mjs', 'jsx', 'ts', 'tsx'],
-        formatter: require.resolve('react-dev-utils/eslintFormatter'),
-        eslintPath: require.resolve('eslint'),
-        context: paths.appSrc,
-        // ESLint class options
-        cwd: paths.appPath,
-        resolvePluginsRelativeTo: __dirname,
-        baseConfig: {
-          extends: [require.resolve('eslint-config-react-app/base')],
-          rules: {
-            ...(!hasJsxRuntime && {
-              'react/react-in-jsx-scope': 'error',
-            }),
-          },
-        },
-      }),
+      // new ESLintPlugin({
+      //   // Plugin options
+      //   extensions: ['js', 'mjs', 'jsx', 'ts', 'tsx'],
+      //   formatter: require.resolve('react-dev-utils/eslintFormatter'),
+      //   eslintPath: require.resolve('eslint'),
+      //   context: paths.appSrc,
+      //   // ESLint class options
+      //   cwd: paths.appPath,
+      //   resolvePluginsRelativeTo: __dirname,
+      //   baseConfig: {
+      //     extends: [require.resolve('eslint-config-react-app/base')],
+      //     rules: {
+      //       ...(!hasJsxRuntime && {
+      //         'react/react-in-jsx-scope': 'error',
+      //       }),
+      //     },
+      //   },
+      // }),
     ].filter(Boolean),
     // Some libraries import Node modules but don't use them in the browser.
     // Tell webpack to provide empty mocks for them so importing them works.

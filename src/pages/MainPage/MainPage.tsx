@@ -10,7 +10,7 @@ const cnMainPage = cn('MainPage');
 
 export const MainPage: React.FC = () => (
   <div className={cnMainPage()}>
-    <Text className={cnMainPage('Text')}>тут контент</Text>
+    <Text className={cnMainPage('Text')}>тут контент 2</Text>
     <MainPageSectionName />
   </div>
 );
