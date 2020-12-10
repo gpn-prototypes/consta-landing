@@ -1,4 +1,5 @@
 import './App.css';
+import './wtpr.css';
 
 import React, { useEffect } from 'react';
 import { cnTheme, Theme } from '@consta/uikit/Theme';
@@ -22,7 +23,7 @@ export const App: React.FC = ({ children }) => {
   }, [theme]);
 
   return (
-    <Theme className={cnApp()} preset={mapTheme[theme]}>
+    <Theme className={cnApp(null, ['theme_gap_large'])} preset={mapTheme[theme]}>
       {children}
     </Theme>
   );

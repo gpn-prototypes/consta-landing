@@ -1,0 +1,13 @@
+.Theme_font_gpnPromo {
+  --font-primary: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-primary: 'Raleway', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Roboto',
+    sans-serif;
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Roboto', sans-serif;
+  --font-mono: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family: var(--font-primary);
+
+  .Text_weight_bold {
+    font-weight: 900;
+  }
+}

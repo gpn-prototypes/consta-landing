@@ -1,0 +1,96 @@
+.Consta--ThemeControls {
+  --radius: 12px;
+  overflow: hidden;
+  margin-right: calc(-1 * var(--space-xs));
+  margin-left: calc(-1 * var(--space-xs));
+  border-radius: var(--radius);
+  box-shadow: 0 27px 80px rgba(var(--color-nums-shadow), 0.09),
+    0 11px 33px rgba(var(--color-nums-shadow), 0.06),
+    0 6px 18px rgba(var(--color-nums-shadow), 0.05), 0 3px 10px rgba(var(--color-nums-shadow), 0.04),
+    0 1px 5px rgba(var(--color-nums-shadow), 0.03), 0 0.7px 2px rgba(var(--color-nums-shadow), 0.02);
+
+  @media (min-width: 720px) {
+    --radius: 16px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &-PresetList,
+  &-Settings {
+    padding: var(--space-xl) var(--space-l);
+
+    @media (min-width: 720px) {
+      padding: var(--space-2xl);
+    }
+
+    @media (min-width: 1200px) {
+      padding: var(--space-3xl);
+    }
+  }
+
+  &-PresetList {
+    background-color: var(--color-bg-default);
+  }
+
+  &-Settings {
+    background-color: var(--color-bg-secondary);
+  }
+
+  &-Preset {
+    position: relative;
+    z-index: 1;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: var(--space-l);
+    padding: var(--space-3xl);
+    padding-left: var(--space-5xl);
+    color: var(--color-typo-primary);
+    background: var(--color-control-bg-default);
+    border: none;
+    border-radius: 12px;
+    box-shadow: inset 0 0 0 1px var(--color-control-bg-border-default);
+    font-size: var(--size-text-2xl);
+    text-align: left;
+    transition: color 0.2s, box-shadow 0.2s;
+
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--brandColor);
+      transition: transform 0.2s;
+      transform: translateX(-97.5%);
+      transform-origin: left center;
+    }
+
+    &_checked {
+      color: var(--color-control-typo-primary);
+
+      &::before {
+        transform: translateX(0);
+      }
+    }
+
+    &:not(.Consta--ThemeControls-Preset_checked):hover {
+      box-shadow: inset 0 0 0 1px var(--color-control-bg-border-default),
+        0 22px 33px -11px rgba(var(--color-nums-shadow), 0.06),
+        0 12px 18px -6px rgba(var(--color-nums-shadow), 0.05),
+        0 6px 10px -3px rgba(var(--color-nums-shadow), 0.04),
+        0 2px 5px -1px rgba(var(--color-nums-shadow), 0.03);
+
+      &::before {
+        transform: translateX(-96%);
+      }
+    }
+  }
+
+  &-ChoiceGroup {
+    background: var(--color-bg-default);
+  }
+}

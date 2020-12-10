@@ -1,0 +1,25 @@
+.Consta--HeroScreen {
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 50%;
+    width: 300vw;
+    height: calc(100% + var(--space-4xl));
+    background: linear-gradient(to bottom, var(--color-bg-default), var(--color-bg-secondary));
+    border-radius: 50%;
+    transform: translateX(-50%);
+  }
+
+  &-PictureFrame {
+    position: relative;
+    left: 50%;
+    width: 100vw;
+    max-width: 1440px;
+    transform: translateX(-50%);
+  }
+}

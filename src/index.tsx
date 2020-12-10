@@ -1,5 +1,3 @@
-import './wtpr.css';
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { context } from '@reatom/react';

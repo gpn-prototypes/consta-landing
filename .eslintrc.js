@@ -48,6 +48,7 @@ module.exports = {
     },
   ],
   rules: {
+    '@typescript-eslint/no-empty-function': 'off',
     'triple-slash-reference': 0,
     'quote-props': ['error', 'consistent-as-needed'],
     'react/prop-types': 'off',
