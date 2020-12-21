@@ -4,7 +4,9 @@ import React from 'react';
 
 import { About } from '@/pages/MainPage/SectionName/About/About';
 import { FAQ } from '@/pages/MainPage/SectionName/FAQ/FAQ';
+import { Footer } from '@/pages/MainPage/SectionName/Footer/Footer';
 import { HeroScreen } from '@/pages/MainPage/SectionName/HeroScreen/HeroScreen';
+import { Links } from '@/pages/MainPage/SectionName/Links/Links';
 import { Projects } from '@/pages/MainPage/SectionName/Projects/Projects';
 import { Themes } from '@/pages/MainPage/SectionName/Themes/Themes';
 import { Variety } from '@/pages/MainPage/SectionName/Variety/Variety';
@@ -22,5 +24,7 @@ export const MainPage: React.FC = () => (
     <Variety />
     <Projects />
     <FAQ />
+    <Links />
+    <Footer />
   </div>
 );

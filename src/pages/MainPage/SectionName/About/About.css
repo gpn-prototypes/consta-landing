@@ -152,7 +152,6 @@
   border: none;
   box-shadow: none;
   font-size: var(--size-text-m);
-  letter-spacing: 0.06em;
   cursor: pointer;
 
   @media (min-width: 1024px) {

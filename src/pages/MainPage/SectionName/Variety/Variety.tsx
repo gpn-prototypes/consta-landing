@@ -17,7 +17,7 @@ export const Variety: React.FC = () => {
         size="5xl"
         weight="bold"
         as="h3"
-        lineHeight="xs"
+        lineHeight="2xs"
       >
         Широкая вариативность
       </Text>

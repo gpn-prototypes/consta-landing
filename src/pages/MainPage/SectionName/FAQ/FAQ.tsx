@@ -41,6 +41,23 @@ const questions = [
       </Text>
     ),
   },
+  {
+    title: 'А если мы работаем с подрядчиками?',
+    answer: (
+      <Text as="p" size="xl">
+        Отлично, отправьте им ссылку на 
+        <Text
+          as="a"
+          view="link"
+          href="https://consta-uikit.vercel.app/?path=/story/common-about--page"
+          size="xl"
+        >
+          описание дизайн-системы
+        </Text>
+        . Все ресурсы публичные, можно использовать и «внутри» компании, и «снаружи».
+      </Text>
+    ),
+  },
 ];
 
 type AccordionProps = {
@@ -83,7 +100,7 @@ export const FAQ: React.FC = () => {
         size="5xl"
         weight="bold"
         as="h3"
-        lineHeight="xs"
+        lineHeight="2xs"
       >
         Частые вопросы и решения
       </Text>
