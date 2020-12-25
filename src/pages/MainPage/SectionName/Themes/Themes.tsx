@@ -12,7 +12,7 @@ const cnThemes = cn('Themes');
 
 export const Themes: React.FC = () => {
   return (
-    <section className={cnThemes(null, ['Container', 'decorator decorator_space-v_6xl'])}>
+    <section className={cnThemes(null, ['Container Section'])}>
       <Text
         className={cnThemes('Title', ['decorator decorator_indent-t_none decorator_indent-b_2xl'])}
         size="5xl"

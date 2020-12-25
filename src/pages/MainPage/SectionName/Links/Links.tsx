@@ -36,7 +36,7 @@ export const Links: React.FC = () => {
   const { themeClassNames } = useTheme();
 
   return (
-    <section className={cnLinks(null, ['Container', 'decorator decorator_space-v_6xl'])}>
+    <section className={cnLinks(null, ['Container', 'Section'])}>
       <Text
         className={cnLinks('Title', ['decorator decorator_indent-t_none decorator_indent-b_5xl'])}
         size="5xl"

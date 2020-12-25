@@ -38,7 +38,7 @@ const More = (
 export const About: React.FC = () => {
   const { themeClassNames } = useTheme();
   return (
-    <section className={cnAbout(null, ['Container', 'decorator decorator_space-v_6xl'])}>
+    <section className={cnAbout(null, ['Container', 'Section'])}>
       <div
         className={cnAbout('Lead', [
           'tpl-grid tpl-grid_col-gap_half tpl-grid_row-gap_full tpl-grid_m-columns_12 decorator decorator_space-b_2xl',

@@ -94,7 +94,7 @@ const Accordion: React.FC<AccordionProps> = (props) => {
 
 export const FAQ: React.FC = () => {
   return (
-    <section className={cnFAQ(null, ['Container', 'decorator decorator_space-v_6xl'])}>
+    <section className={cnFAQ(null, ['Container', 'Section'])}>
       <Text
         className={cnFAQ('Title', ['decorator decorator_indent-t_none decorator_indent-b_5xl'])}
         size="5xl"

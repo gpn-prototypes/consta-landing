@@ -12,12 +12,10 @@ const cnFooter = cn('Footer');
 
 export const Footer: React.FC = () => {
   return (
-    <section className={cnFooter(null, ['decorator decorator_space-t_5xl decorator_space-b_4xl'])}>
+    <section className={cnFooter(null, ['Section_space_small'])}>
       <div className="Container">
         <Text
-          className={cnFooter('Title', [
-            'decorator decorator_indent-t_none decorator_indent-b_2xl',
-          ])}
+          className={cnFooter('Title', ['decorator decorator_indent-t_3xl decorator_indent-b_2xl'])}
           size="3xl"
           weight="bold"
           as="h2"
@@ -30,6 +28,7 @@ export const Footer: React.FC = () => {
             className={cnFooter('Form', ['tpl-grid__fraction_m-col_5 tpl-grid__fraction_l-col_7'])}
           >
             <TextField
+              // TODO Надо сделать в 3 строки, но у меня не получилось
               size="l"
               type="textarea"
               rows={3}

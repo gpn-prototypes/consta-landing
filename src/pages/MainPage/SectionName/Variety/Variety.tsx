@@ -11,7 +11,7 @@ const cnVariety = cn('Variety');
 
 export const Variety: React.FC = () => {
   return (
-    <section className={cnVariety(null, ['Container', 'decorator decorator_space-v_6xl'])}>
+    <section className={cnVariety(null, ['Container Section'])}>
       <Text
         className={cnVariety('Title', ['decorator decorator_indent-t_none decorator_indent-b_2xl'])}
         size="5xl"

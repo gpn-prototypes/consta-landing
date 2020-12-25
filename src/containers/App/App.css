@@ -133,3 +133,13 @@ p {
   margin: 0 auto;
   padding: 0 5vw;
 }
+
+.Section {
+  padding-top: clamp(var(--space-2xl), 16vmin, var(--space-6xl));
+  padding-bottom: clamp(var(--space-2xl), 16vmin, var(--space-6xl));
+
+  &_space_small {
+    padding-top: clamp(var(--space-xl), 10vmin, var(--space-4xl));
+    padding-bottom: clamp(var(--space-xl), 10vmin, var(--space-4xl));
+  }
+}

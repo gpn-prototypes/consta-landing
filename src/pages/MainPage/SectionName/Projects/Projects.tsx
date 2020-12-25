@@ -12,7 +12,7 @@ const cnProjects = cn('Projects');
 export const Projects: React.FC = () => {
   const { themeClassNames } = useTheme();
   return (
-    <section className="Container decorator decorator_indent-v_4xl">
+    <section className="Container Section_space_small">
       <div className={cnProjects(null, [themeClassNames.color.accent])}>
         <Text
           className={cnProjects('Title', [

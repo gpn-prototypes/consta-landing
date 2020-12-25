@@ -6,8 +6,12 @@ import { Text } from '@consta/uikit/Text';
 
 import { IconFigma } from '../../../../icons/IconFigma/IconFigma';
 import { IconGithub } from '../../../../icons/IconGithub/IconGithub';
-import { IconStorybook } from '../../../../icons/IconStorybook/IconStorybook';
-import HeroImage from '../../../../images/HeroImage.png';
+import HeroImage_375_1x from '../../../../images/HeroImage_375_1x.jpg';
+import HeroImage_375_2x from '../../../../images/HeroImage_375_2x.jpg';
+import HeroImage_375_3x from '../../../../images/HeroImage_375_3x.jpg';
+import HeroImage_720_1x from '../../../../images/HeroImage_720_1x.jpg';
+import HeroImage_720_2x from '../../../../images/HeroImage_720_2x.jpg';
+import HeroImage_720_3x from '../../../../images/HeroImage_720_3x.jpg';
 
 import { cn } from '@/utils/bem';
 
@@ -15,54 +19,82 @@ const cnHeroScreen = cn('HeroScreen');
 
 export const HeroScreen: React.FC = () => {
   return (
-    <section
-      className={cnHeroScreen(null, [
-        'Container',
-        'decorator decorator_space-b_6xl decorator_indent-v_6xl',
-      ])}
-    >
-      <Text
-        className={cnHeroScreen('Title', ['decorator decorator_indent-v_4xl'])}
-        size="5xl"
-        weight="bold"
-        as="h1"
-        lineHeight="2xs"
-        align="center"
-      >
-        Consta — дизайн&#8209;система для быстрой разработки интерфейса.
-      </Text>
-      <div className={cnHeroScreen('Links')}>
-        <Text
-          className="decorator decorator_indent-h_auto decorator_indent-b_xl"
-          size="l"
-          weight="regular"
-          view="secondary"
-          as="p"
-          lineHeight="xs"
-          align="center"
-        >
-          Посмотреть библиотеку
-        </Text>
-        <div className="decorator decorator_distribute_center">
-          <Button
-            label="Storybook"
-            size="l"
-            iconLeft={IconStorybook}
-            className="decorator decorator_indent-r_xs"
-          />
-          <Button
-            label="Figma"
-            size="l"
-            view="secondary"
-            iconLeft={IconFigma}
-            className="decorator decorator_indent-r_xs"
-          />
-          <Button label="Github" size="l" view="secondary" iconLeft={IconGithub} />
+    <div className="Container Section">
+      <section className={cnHeroScreen()}>
+        <div className={cnHeroScreen('Content')}>
+          <Text
+            className={cnHeroScreen('Title', ['decorator decorator_indent-v_4xl'])}
+            size="6xl"
+            weight="bold"
+            as="h1"
+            lineHeight="xs"
+          >
+            Consta
+            <Text
+              className={cnHeroScreen('SubTitle')}
+              size="3xl"
+              as="span"
+              weight="regular"
+              display="block"
+              lineHeight="xs"
+            >
+              Дизайн&#8209;система для быстрой разработки интерфейса.
+            </Text>
+          </Text>
+          <div className={cnHeroScreen('Links')}>
+            <Text
+              className="decorator decorator_indent-b_xl"
+              size="l"
+              weight="regular"
+              view="secondary"
+              as="p"
+              lineHeight="xs"
+            >
+              Посмотреть библиотеку
+            </Text>
+            <div className="decorator decorator_distribute_left">
+              <Button
+                as="a"
+                href="https://consta-uikit.vercel.app/"
+                label="Компоненты"
+                size="l"
+                className="decorator decorator_indent-r_xs"
+              />
+              <Button
+                as="a"
+                href="https://www.figma.com/@Consta"
+                label="Figma"
+                size="l"
+                view="secondary"
+                iconLeft={IconFigma}
+                onlyIcon
+                className="decorator decorator_indent-r_xs"
+              />
+              <Button
+                as="a"
+                href="https://github.com/gazprom-neft/consta-uikit"
+                label="Github"
+                size="l"
+                view="secondary"
+                iconLeft={IconGithub}
+                onlyIcon
+              />
+            </div>
+          </div>
         </div>
-      </div>
-      <div className={cnHeroScreen('PictureFrame')}>
-        <img src={HeroImage} alt="Artistic 3D visualisation of Consta components" />
-      </div>
-    </section>
+
+        <picture className={cnHeroScreen('PictureFrame')}>
+          <source
+            media="(max-width: 1023px)"
+            srcSet={`${HeroImage_375_1x} 1x, ${HeroImage_375_2x} 2x, ${HeroImage_375_3x} 4x`}
+          />
+          <source
+            media="(min-width: 1024px)"
+            srcSet={`${HeroImage_720_1x} 1x, ${HeroImage_720_2x} 2x, ${HeroImage_720_3x} 4x`}
+          />
+          <img src={HeroImage_375_1x} alt="Artistic 3D visualisation of Consta components" />
+        </picture>
+      </section>
+    </div>
   );
 };
