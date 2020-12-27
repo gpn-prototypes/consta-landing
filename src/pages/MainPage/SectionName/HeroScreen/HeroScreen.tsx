@@ -6,12 +6,12 @@ import { Text } from '@consta/uikit/Text';
 
 import { IconFigma } from '../../../../icons/IconFigma/IconFigma';
 import { IconGithub } from '../../../../icons/IconGithub/IconGithub';
-import HeroImage_375_1x from '../../../../images/HeroImage_375_1x.jpg';
-import HeroImage_375_2x from '../../../../images/HeroImage_375_2x.jpg';
-import HeroImage_375_3x from '../../../../images/HeroImage_375_3x.jpg';
-import HeroImage_720_1x from '../../../../images/HeroImage_720_1x.jpg';
-import HeroImage_720_2x from '../../../../images/HeroImage_720_2x.jpg';
-import HeroImage_720_3x from '../../../../images/HeroImage_720_3x.jpg';
+import HeroImage_375_1x from '../../../../images/HeroImage/Default/HeroImage_375_1x.jpg';
+import HeroImage_375_2x from '../../../../images/HeroImage/Default/HeroImage_375_2x.jpg';
+import HeroImage_375_3x from '../../../../images/HeroImage/Default/HeroImage_375_3x.jpg';
+import HeroImage_720_1x from '../../../../images/HeroImage/Default/HeroImage_720_1x.jpg';
+import HeroImage_720_2x from '../../../../images/HeroImage/Default/HeroImage_720_2x.jpg';
+import HeroImage_720_3x from '../../../../images/HeroImage/Default/HeroImage_720_3x.jpg';
 
 import { cn } from '@/utils/bem';
 

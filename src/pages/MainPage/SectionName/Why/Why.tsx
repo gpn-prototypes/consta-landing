@@ -3,18 +3,18 @@ import './Why.css';
 import React from 'react';
 import { Text } from '@consta/uikit/Text';
 
-import Reason1_1x from '../../../../images/Reason_1_1x.jpg';
-import Reason1_2x from '../../../../images/Reason_1_2x.jpg';
-import Reason1_3x from '../../../../images/Reason_1_3x.jpg';
-import Reason2_1x from '../../../../images/Reason_2_1x.jpg';
-import Reason2_2x from '../../../../images/Reason_2_2x.jpg';
-import Reason2_3x from '../../../../images/Reason_2_3x.jpg';
-import Reason3_1x from '../../../../images/Reason_3_1x.jpg';
-import Reason3_2x from '../../../../images/Reason_3_2x.jpg';
-import Reason3_3x from '../../../../images/Reason_3_3x.jpg';
-import Reason4_1x from '../../../../images/Reason_4_1x.jpg';
-import Reason4_2x from '../../../../images/Reason_4_2x.jpg';
-import Reason4_3x from '../../../../images/Reason_4_3x.jpg';
+import Reason1_1x from '../../../../images/Reasons/Default/Reason_1_1x.jpg';
+import Reason1_2x from '../../../../images/Reasons/Default/Reason_1_2x.jpg';
+import Reason1_3x from '../../../../images/Reasons/Default/Reason_1_3x.jpg';
+import Reason2_1x from '../../../../images/Reasons/Default/Reason_2_1x.jpg';
+import Reason2_2x from '../../../../images/Reasons/Default/Reason_2_2x.jpg';
+import Reason2_3x from '../../../../images/Reasons/Default/Reason_2_3x.jpg';
+import Reason3_1x from '../../../../images/Reasons/Default/Reason_3_1x.jpg';
+import Reason3_2x from '../../../../images/Reasons/Default/Reason_3_2x.jpg';
+import Reason3_3x from '../../../../images/Reasons/Default/Reason_3_3x.jpg';
+import Reason4_1x from '../../../../images/Reasons/Default/Reason_4_1x.jpg';
+import Reason4_2x from '../../../../images/Reasons/Default/Reason_4_2x.jpg';
+import Reason4_3x from '../../../../images/Reasons/Default/Reason_4_3x.jpg';
 
 import { cn } from '@/utils/bem';
 
