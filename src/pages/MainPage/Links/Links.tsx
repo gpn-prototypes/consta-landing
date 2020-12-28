@@ -12,7 +12,7 @@ import IconGithub from '@/icons/Github.icon.svg';
 import IconStorybook from '@/icons/Storybook.icon.svg';
 import { cn } from '@/utils/bem';
 
-const cnLinks = cn('Links');
+export const cnLinks = cn('Links');
 
 const More = (
   <Text
