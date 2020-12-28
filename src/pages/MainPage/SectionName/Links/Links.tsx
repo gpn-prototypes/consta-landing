@@ -7,10 +7,9 @@ import { IconForward } from '@consta/uikit/IconForward';
 import { Text } from '@consta/uikit/Text';
 import { useTheme } from '@consta/uikit/Theme';
 
-import { IconFigma } from '../../../../icons/IconFigma/IconFigma';
-import { IconGithub } from '../../../../icons/IconGithub/IconGithub';
-import { IconStorybook } from '../../../../icons/IconStorybook/IconStorybook';
-
+import IconFigma from '@/icons/Figma.icon.svg';
+import IconGithub from '@/icons/Github.icon.svg';
+import IconStorybook from '@/icons/Storybook.icon.svg';
 import { cn } from '@/utils/bem';
 
 const cnLinks = cn('Links');

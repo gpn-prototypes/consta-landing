@@ -7,10 +7,9 @@ import { IconThumbUp } from '@consta/uikit/IconThumbUp';
 import { Text } from '@consta/uikit/Text';
 import { useTheme } from '@consta/uikit/Theme';
 
-import { IconFigma } from '../../../../icons/IconFigma/IconFigma';
-import { IconGithub } from '../../../../icons/IconGithub/IconGithub';
-import { IconStorybook } from '../../../../icons/IconStorybook/IconStorybook';
-
+import IconFigma from '@/icons/Figma.icon.svg';
+import IconGithub from '@/icons/Github.icon.svg';
+import IconStorybook from '@/icons/Storybook.icon.svg';
 // import AboutImage from '../../../../images/AboutImage.png';
 import { cn } from '@/utils/bem';
 

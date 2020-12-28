@@ -315,6 +315,7 @@ module.exports = function (webpackEnv) {
         '@/modules': path.resolve(__dirname, '../src/modules'),
         '@/pages': path.resolve(__dirname, '../src/pages/'),
         '@/svg': path.resolve(__dirname, '../src/svg/'),
+        '@/icons': path.resolve(__dirname, '../src/icons/'),
         '@/utils': path.resolve(__dirname, '../src/utils/'),
 
         // Support React Native Web
@@ -502,7 +503,7 @@ module.exports = function (webpackEnv) {
               ),
             },
             {
-              test: /\.svg$/,
+              test: /(\/|\\)icons(\/|\\)[\w\.\-\/]*\.svg$/,
               use: [
                 {
                   loader: '@svgr/webpack',
@@ -514,11 +515,19 @@ module.exports = function (webpackEnv) {
                     ) => {
                       return template.ast`
                                   ${imports}
-                                  const ${componentName} = (${props}) => {
+                                  import { createIcon } from '@consta/uikit/createIcon';
+
+                                  const Icon = (${props}) => {
                                     props = { ...props };
                                     return ${jsx};
                                   };
-                                  export default ${componentName};
+
+                                  export default createIcon({
+                                    m: Icon,
+                                    s: Icon,
+                                    xs: Icon,
+                                    name: 'Icon',
+                                  });
                             `;
                     },
                     plugins: ['@svgr/plugin-svgo', '@svgr/plugin-jsx', '@svgr/plugin-prettier'],
