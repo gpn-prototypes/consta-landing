@@ -4,14 +4,27 @@ import React from 'react';
 import { Button } from '@consta/uikit/Button';
 import { Text } from '@consta/uikit/Text';
 
+import { Picture } from '@/components/Picture/Picture';
 import IconFigma from '@/icons/Figma.icon.svg';
 import IconGithub from '@/icons/Github.icon.svg';
-import HeroImage_375_1x from '@/images/HeroImage/Default/HeroImage_375_1x.jpg';
-import HeroImage_375_2x from '@/images/HeroImage/Default/HeroImage_375_2x.jpg';
-import HeroImage_375_3x from '@/images/HeroImage/Default/HeroImage_375_3x.jpg';
-import HeroImage_720_1x from '@/images/HeroImage/Default/HeroImage_720_1x.jpg';
-import HeroImage_720_2x from '@/images/HeroImage/Default/HeroImage_720_2x.jpg';
-import HeroImage_720_3x from '@/images/HeroImage/Default/HeroImage_720_3x.jpg';
+import HeroImage_375_1x_dark from '@/images/HeroImage/Dark/HeroImage_375_1x.jpg';
+import HeroImage_375_2x_dark from '@/images/HeroImage/Dark/HeroImage_375_2x.jpg';
+import HeroImage_375_3x_dark from '@/images/HeroImage/Dark/HeroImage_375_3x.jpg';
+import HeroImage_720_1x_dark from '@/images/HeroImage/Dark/HeroImage_720_1x.jpg';
+import HeroImage_720_2x_dark from '@/images/HeroImage/Dark/HeroImage_720_2x.jpg';
+import HeroImage_720_3x_dark from '@/images/HeroImage/Dark/HeroImage_720_3x.jpg';
+import HeroImage_375_1x_default from '@/images/HeroImage/Default/HeroImage_375_1x.jpg';
+import HeroImage_375_2x_default from '@/images/HeroImage/Default/HeroImage_375_2x.jpg';
+import HeroImage_375_3x_default from '@/images/HeroImage/Default/HeroImage_375_3x.jpg';
+import HeroImage_720_1x_default from '@/images/HeroImage/Default/HeroImage_720_1x.jpg';
+import HeroImage_720_2x_default from '@/images/HeroImage/Default/HeroImage_720_2x.jpg';
+import HeroImage_720_3x_default from '@/images/HeroImage/Default/HeroImage_720_3x.jpg';
+import HeroImage_375_1x_display from '@/images/HeroImage/Display/HeroImage_375_1x.jpg';
+import HeroImage_375_2x_display from '@/images/HeroImage/Display/HeroImage_375_2x.jpg';
+import HeroImage_375_3x_display from '@/images/HeroImage/Display/HeroImage_375_3x.jpg';
+import HeroImage_720_1x_display from '@/images/HeroImage/Display/HeroImage_720_1x.jpg';
+import HeroImage_720_2x_display from '@/images/HeroImage/Display/HeroImage_720_2x.jpg';
+import HeroImage_720_3x_display from '@/images/HeroImage/Display/HeroImage_720_3x.jpg';
 import { cn } from '@/utils/bem';
 
 const cnHeroScreen = cn('HeroScreen');
@@ -82,17 +95,50 @@ export const HeroScreen: React.FC = () => {
           </div>
         </div>
 
-        <picture className={cnHeroScreen('PictureFrame')}>
-          <source
-            media="(max-width: 1023px)"
-            srcSet={`${HeroImage_375_1x} 1x, ${HeroImage_375_2x} 2x, ${HeroImage_375_3x} 4x`}
-          />
-          <source
-            media="(min-width: 1024px)"
-            srcSet={`${HeroImage_720_1x} 1x, ${HeroImage_720_2x} 2x, ${HeroImage_720_3x} 4x`}
-          />
-          <img src={HeroImage_375_1x} alt="Artistic 3D visualisation of Consta components" />
-        </picture>
+        <Picture
+          className={cnHeroScreen('PictureFrame')}
+          mode={2}
+          alt="Artistic 3D visualisation of Consta components"
+          title="mode 2"
+          src={{
+            gpnDefault: {
+              0: {
+                '1x': HeroImage_375_1x_default,
+                '2x': HeroImage_375_2x_default,
+                '4x': HeroImage_375_3x_default,
+              },
+              1024: {
+                '1x': HeroImage_720_1x_default,
+                '2x': HeroImage_720_2x_default,
+                '4x': HeroImage_720_3x_default,
+              },
+            },
+            gpnDark: {
+              0: {
+                '1x': HeroImage_375_1x_dark,
+                '2x': HeroImage_375_2x_dark,
+                '4x': HeroImage_375_3x_dark,
+              },
+              1024: {
+                '1x': HeroImage_720_1x_dark,
+                '2x': HeroImage_720_2x_dark,
+                '4x': HeroImage_720_3x_dark,
+              },
+            },
+            gpnDisplay: {
+              0: {
+                '1x': HeroImage_375_1x_display,
+                '2x': HeroImage_375_2x_display,
+                '4x': HeroImage_375_3x_display,
+              },
+              1024: {
+                '1x': HeroImage_720_1x_display,
+                '2x': HeroImage_720_2x_display,
+                '4x': HeroImage_720_3x_display,
+              },
+            },
+          }}
+        />
       </section>
     </div>
   );
