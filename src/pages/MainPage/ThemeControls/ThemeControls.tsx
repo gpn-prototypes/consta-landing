@@ -1,45 +1,44 @@
 import './ThemeControls.css';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { ChoiceGroup } from '@consta/uikit/ChoiceGroup';
-import { IconProps } from '@consta/uikit/Icon';
-import { IconMoon } from '@consta/uikit/IconMoon';
-import { IconSun } from '@consta/uikit/IconSun';
 import { Text } from '@consta/uikit/Text';
+import { useAction, useAtom } from '@reatom/react';
 
+import { PresetList } from '@/components/PresetList/PresetList';
+import {
+  colorAtom,
+  colors,
+  fontAtom,
+  fonts,
+  presetAtom,
+  presets,
+  setColorAction,
+  setFontAction,
+  setPresetAction,
+  setSizeAction,
+  setSpaceAction,
+  sizeAtom,
+  sizes,
+  spaceAtom,
+  spaces,
+} from '@/modules/theme';
 import { cn } from '@/utils/bem';
 
 const cnControls = cn('ThemeControls');
 
-type ItemCG = string;
-type ItemCGIcon = {
-  name: string;
-  icon?: React.FC<IconProps>;
-};
-
-const ColorThemes = [
-  {
-    name: 'Светлая',
-    icon: IconSun,
-  },
-  {
-    name: 'Тёмная',
-    icon: IconMoon,
-  },
-  {
-    name: 'Промо',
-    icon: IconMoon,
-  },
-];
-const FontThemes = ['Промо', 'По умолчанию'];
-const SizeThemes = ['Увеличенный', 'По умолчанию'];
-const SpaceThemes = ['Воздушнее', 'По умолчанию'];
-
 export const ThemeControls: React.FC = () => {
-  const [fontTheme, setFontTheme] = useState<ItemCG | null>(FontThemes[0]);
-  const [sizeTheme, setSizeTheme] = useState<ItemCG | null>(SizeThemes[0]);
-  const [spaceTheme, setSpaceTheme] = useState<ItemCG | null>(SpaceThemes[0]);
-  const [colorTheme, setColorTheme] = useState<ItemCGIcon | null>(ColorThemes[0]);
+  const color = useAtom(colorAtom);
+  const font = useAtom(fontAtom);
+  const preset = useAtom(presetAtom);
+  const size = useAtom(sizeAtom);
+  const space = useAtom(spaceAtom);
+
+  const setPreset = useAction(setPresetAction);
+  const setColor = useAction(setColorAction);
+  const setFont = useAction(setFontAction);
+  const setSize = useAction(setSizeAction);
+  const setSpace = useAction(setSpaceAction);
 
   return (
     <div className={cnControls()}>
@@ -53,18 +52,13 @@ export const ThemeControls: React.FC = () => {
         >
           Пресеты
         </Text>
-        <button
-          className={cnControls('Preset', { checked: true })}
-          style={{ ['--brandColor' as any]: '#0071B2' }}
-        >
-          Газпром нефть
-        </button>
-        <button className={cnControls('Preset')} style={{ ['--brandColor' as any]: '#00c365' }}>
-          Казахтелешмон
-        </button>
-        <button className={cnControls('Preset')} style={{ ['--brandColor' as any]: '#f90022' }}>
-          Тупойл
-        </button>
+        <PresetList
+          items={presets}
+          value={preset}
+          getLabel={(item) => item.name}
+          getBrandColor={(item) => item.brandColor}
+          onChange={({ value }) => setPreset(value)}
+        />
       </div>
       <div className={cnControls('Settings')}>
         <Text
@@ -89,16 +83,16 @@ export const ThemeControls: React.FC = () => {
           </Text>
           <ChoiceGroup
             name="ColorThemes"
-            value={colorTheme}
-            onChange={({ value }) => setColorTheme(value)}
-            items={ColorThemes}
+            value={color}
+            onChange={({ value }) => setColor(value)}
+            items={colors}
             getLabel={(item) => item.name}
             getIcon={(item) => item.icon}
             size="l"
             width="full"
-            onlyIcon={true}
             multiple={false}
             className={cnControls('ChoiceGroup')}
+            onlyIcon
           />
         </div>
 
@@ -114,17 +108,16 @@ export const ThemeControls: React.FC = () => {
           </Text>
           <ChoiceGroup
             name="FontThemes"
-            value={fontTheme}
-            onChange={({ value }) => setFontTheme(value)}
-            items={FontThemes}
-            getLabel={(item) => item}
+            value={font}
+            onChange={({ value }) => setFont(value)}
+            items={fonts}
+            getLabel={(item) => item.name}
             size="l"
             width="full"
             multiple={false}
             className={cnControls('ChoiceGroup')}
           />
         </div>
-
         <div className={cnControls('Item', ['decorator decorator_indent-b_l'])}>
           <Text
             className={cnControls('Label', ['decorator decorator_indent-b_xs'])}
@@ -137,10 +130,10 @@ export const ThemeControls: React.FC = () => {
           </Text>
           <ChoiceGroup
             name="SizeThemes"
-            value={sizeTheme}
-            onChange={({ value }) => setSizeTheme(value)}
-            items={SizeThemes}
-            getLabel={(item) => item}
+            value={size}
+            onChange={({ value }) => setSize(value)}
+            items={sizes}
+            getLabel={(item) => item.name}
             size="l"
             width="full"
             multiple={false}
@@ -160,10 +153,10 @@ export const ThemeControls: React.FC = () => {
           </Text>
           <ChoiceGroup
             name="SpaceThemes"
-            value={spaceTheme}
-            onChange={({ value }) => setSpaceTheme(value)}
-            items={SpaceThemes}
-            getLabel={(item) => item}
+            value={space}
+            onChange={({ value }) => setSpace(value)}
+            items={spaces}
+            getLabel={(item) => item.name}
             size="l"
             width="full"
             multiple={false}
