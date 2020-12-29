@@ -6,6 +6,7 @@ import './Theme_size_gpnPromo.css';
 import './Theme_space_gpnPromo.css';
 import './Theme_control_gpnPromo.css';
 
+import { IconFavorite } from '@consta/uikit/IconFavorite';
 import { IconMoon } from '@consta/uikit/IconMoon';
 import { IconSun } from '@consta/uikit/IconSun';
 // импортируем пресеты чтобы подключились стили к проекту
@@ -45,7 +46,7 @@ export const colors = [
   },
   {
     name: 'Промо',
-    icon: IconMoon,
+    icon: IconFavorite,
     value: 2,
   },
 ];

@@ -93,14 +93,11 @@ export const About: React.FC = () => {
         добавить к себе.
       </Text>
 
-      <div
-        className={cnAbout('Links', [
-          cnLinks(),
-          themeClassNames.color.invert,
-          'decorator decorator_indent-b_2xl',
-        ])}
-      >
-        <a href="https://consta-uikit.vercel.app/" className={cnLinks('Item', { to: 'Storybook' })}>
+      <div className={cnAbout('Links', [cnLinks(), 'decorator decorator_indent-b_2xl'])}>
+        <a
+          href="https://consta-uikit.vercel.app/"
+          className={cnLinks('Item', { to: 'Storybook' }, [themeClassNames.color.accent])}
+        >
           <div className={cnLinks('Content', ['tpl-grid tpl-grid_l-ratio_1-1'])}>
             <div className="tpl-grid__fraction">
               <Text
@@ -124,7 +121,10 @@ export const About: React.FC = () => {
           </div>
         </a>
 
-        <a href="https://www.figma.com/@Consta" className={cnLinks('Item', { to: 'Figma' })}>
+        <a
+          href="https://www.figma.com/@Consta"
+          className={cnLinks('Item', { to: 'Figma' }, [themeClassNames.color.invert])}
+        >
           <div className={cnLinks('Content')}>
             <Text
               className={cnLinks('Title', ['decorator decorator_indent-b_xl'])}
@@ -148,7 +148,7 @@ export const About: React.FC = () => {
 
         <a
           href="https://github.com/gazprom-neft/consta-uikit"
-          className={cnLinks('Item', { to: 'Github' })}
+          className={cnLinks('Item', { to: 'Github' }, [themeClassNames.color.invert])}
         >
           <div className={cnLinks('Content')}>
             <Text

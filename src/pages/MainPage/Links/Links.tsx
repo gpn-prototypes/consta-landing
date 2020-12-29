@@ -45,15 +45,10 @@ export const Links: React.FC = () => {
       >
         Берите и пользуйтесь
       </Text>
-      <div
-        className={cnLinks('List', [
-          themeClassNames.color.invert,
-          'tpl-grid tpl-grid_m-ratio_1-1-1',
-        ])}
-      >
+      <div className={cnLinks('List', ['tpl-grid tpl-grid_m-ratio_1-1-1'])}>
         <a
           href="https://consta-uikit.vercel.app/"
-          className={cnLinks('Card', { view: 'Storybook' })}
+          className={cnLinks('Card', { view: 'Storybook' }, [themeClassNames.color.accent])}
         >
           <div className={cnLinks('CardContent')}>
             <IconStorybook size="m" view="primary" className={cnLinks('Logo')} />
@@ -63,7 +58,7 @@ export const Links: React.FC = () => {
               weight="bold"
               lineHeight="s"
             >
-              Витрина компонентов и документация
+              <span>Витрина компонентов и документация</span>
             </Text>
             <Text
               className={cnLinks('CardDescription', ['decorator decorator_indent-b_xl'])}
@@ -80,7 +75,10 @@ export const Links: React.FC = () => {
           </div>
         </a>
 
-        <a href="https://www.figma.com/@Consta" className={cnLinks('Card', { view: 'Figma' })}>
+        <a
+          href="https://www.figma.com/@Consta"
+          className={cnLinks('Card', { view: 'Figma' }, [themeClassNames.color.invert])}
+        >
           <div className={cnLinks('CardContent')}>
             <IconFigma size="m" view="primary" className={cnLinks('Logo')} />
             <Text
@@ -89,7 +87,7 @@ export const Links: React.FC = () => {
               weight="bold"
               lineHeight="s"
             >
-              Библиотека в Figma
+              <span>Библиотека в Figma</span>
             </Text>
             <Text
               className={cnLinks('CardDescription', ['decorator decorator_indent-b_xl'])}
@@ -108,7 +106,7 @@ export const Links: React.FC = () => {
 
         <a
           href="https://github.com/gazprom-neft/consta-uikit"
-          className={cnLinks('Card', { view: 'Github' })}
+          className={cnLinks('Card', { view: 'Github' }, [themeClassNames.color.invert])}
         >
           <div className={cnLinks('CardContent')}>
             <IconGithub size="m" view="primary" className={cnLinks('Logo')} />
@@ -118,7 +116,7 @@ export const Links: React.FC = () => {
               weight="bold"
               lineHeight="s"
             >
-              React-библиотека
+              <span>React-библиотека</span>
             </Text>
             <Text
               className={cnLinks('CardDescription', ['decorator decorator_indent-b_xl'])}
