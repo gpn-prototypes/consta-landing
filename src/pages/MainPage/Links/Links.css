@@ -9,6 +9,12 @@
     margin-right: calc(-1 * var(--space-xs));
     margin-left: calc(-1 * var(--space-xs));
     border-radius: var(--radius);
+    box-shadow: 0 27px 80px rgba(var(--color-nums-shadow), 0.09),
+      0 11px 33px rgba(var(--color-nums-shadow), 0.06),
+      0 6px 18px rgba(var(--color-nums-shadow), 0.05),
+      0 3px 10px rgba(var(--color-nums-shadow), 0.04),
+      0 1px 5px rgba(var(--color-nums-shadow), 0.03),
+      0 0.7px 2px rgba(var(--color-nums-shadow), 0.02);
 
     @media (min-width: 720px) {
       --radius: 16px;
@@ -39,6 +45,7 @@
     flex-direction: column;
     justify-content: space-between;
     padding: var(--space-xl) var(--space-l) var(--space-l);
+    background-color: var(--bg-color);
     text-decoration: none;
 
     @media (min-width: 720px) {
@@ -54,15 +61,15 @@
     }
 
     &_view_Storybook {
-      background-color: var(--color-bg-link);
+      --bg-color: var(--color-bg-link);
     }
 
     &_view_Figma {
-      background-color: var(--color-bg-secondary);
+      --bg-color: var(--color-bg-secondary);
     }
 
     &_view_Github {
-      background-color: var(--color-bg-default);
+      --bg-color: var(--color-bg-default);
     }
   }
 
@@ -80,8 +87,9 @@
     transform: translateX(var(--space-m));
   }
 
-  &-Card:hover &-CardTitle {
-    text-decoration: underline;
+  &-Card:hover &-CardTitle span {
+    background-size: 1px 1em;
+    box-shadow: inset 0 -0.12em var(--color-bg-ghost);
   }
 
   &-Card:hover &-Title::before {
