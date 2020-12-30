@@ -38,7 +38,7 @@ type Picture = (props: Props) => React.ReactElement | null;
 
 // eslint-disable-next-line react/display-name
 export const Picture: Picture = React.forwardRef((props, ref) => {
-  const { className, alt, title, src, mode = 1 } = props;
+  const { alt, title, src, mode = 1, ...otherProps } = props;
   const { theme } = useTheme();
 
   const image = src[theme.color.primary];
@@ -56,7 +56,11 @@ export const Picture: Picture = React.forwardRef((props, ref) => {
     const keys = Object.keys(images).sort();
     const srcSet = keys.map((key) => `${images[key]} ${key}`).join(',');
 
-    return <img src={images[keys[0]]} srcSet={srcSet} alt={alt} title={title} />;
+    return (
+      <picture {...otherProps} ref={ref}>
+        <img src={images[keys[0]]} srcSet={srcSet} alt={alt} title={title} />
+      </picture>
+    );
   }
 
   if (mode === 2) {
@@ -87,7 +91,7 @@ export const Picture: Picture = React.forwardRef((props, ref) => {
     const { src, srcSet } = getDefaultImageSrc();
 
     return (
-      <picture ref={ref} className={className}>
+      <picture {...otherProps} ref={ref}>
         {keys.map((key) => {
           console.log(key);
           if (key === defautlImageKey) {
@@ -134,7 +138,7 @@ export const Picture: Picture = React.forwardRef((props, ref) => {
     const { src, srcSet } = getDefaultImageSrc();
 
     return (
-      <picture ref={ref} className={className}>
+      <picture {...otherProps} ref={ref}>
         {keys.map((key) => {
           if (key === defautlImageKey) {
             return null;
