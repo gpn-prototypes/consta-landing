@@ -14,7 +14,7 @@ type PicturePropSrcMode3 = {
   [key: string]: { [key: string]: { [key: string]: string } | string };
 };
 
-type PictureProps = {
+export type PictureProps = {
   alt?: string;
   title?: string;
 } & (
