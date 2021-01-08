@@ -1066,10 +1066,10 @@
   resolved "https://registry.yarnpkg.com/@commitlint/types/-/types-11.0.0.tgz#719cf05fcc1abb6533610a2e0f5dd1e61eac14fe"
   integrity sha512-VoNqai1vR5anRF5Tuh/+SWDFk7xi7oMwHrHrbm1BprYXjB2RJsWLhUrStMssDxEl5lW/z3EUdg8RvH/IUBccSQ==
 
-"@consta/uikit@^1.10.9":
-  version "1.10.9"
-  resolved "https://registry.yarnpkg.com/@consta/uikit/-/uikit-1.10.9.tgz#e30f4759b5756484ecb1b9140cdd78878ff82bec"
-  integrity sha512-OukOEMfzOw/vocPE4c2j5V73CG/G1dDeo8AwxY4IgFfCadpwR7wAeigDZrd4S70hdrRdI+8LWJPtp4nTs/LBcQ==
+"@consta/uikit@^1.10.13":
+  version "1.10.13"
+  resolved "https://registry.yarnpkg.com/@consta/uikit/-/uikit-1.10.13.tgz#fd9d48124ac0d657190d1d2ebe36ea03e9f4697d"
+  integrity sha512-ouU6hItszPzxrGOlfDL/xtyArOO5SKgxymqeeYO5ndYVmmUoMJSntI1JhwyaxfQZXKt0NzTwbvmujnC4+1YxVg==
   dependencies:
     "@bem-react/classname" "^1.5.8"
     "@bem-react/classnames" "^1.3.9"

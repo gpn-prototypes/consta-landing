@@ -1,11 +1,10 @@
 import './Links.css';
 
 import React from 'react';
-import { Button } from '@consta/uikit/Button';
-import { IconCopy } from '@consta/uikit/IconCopy';
-import { IconForward } from '@consta/uikit/IconForward';
 import { Text } from '@consta/uikit/Text';
 import { useTheme } from '@consta/uikit/Theme';
+
+import { LinksCard } from './LinksCard/LinksCard';
 
 import IconFigma from '@/icons/Figma.icon.svg';
 import IconGithub from '@/icons/Github.icon.svg';
@@ -13,23 +12,6 @@ import IconStorybook from '@/icons/Storybook.icon.svg';
 import { cn } from '@/utils/bem';
 
 export const cnLinks = cn('Links');
-
-const More = (
-  <Text
-    className={cnLinks('More', [
-      'decorator decorator_distribute_left decorator_vertical-align_center decorator_indent-r_s',
-    ])}
-    size="l"
-    as="span"
-  >
-    Смотреть
-    <IconForward
-      className={cnLinks('Arrow', ['decorator decorator_indent-l_m'])}
-      size="m"
-      view="primary"
-    />
-  </Text>
-);
 
 export const Links: React.FC = () => {
   const { themeClassNames } = useTheme();
@@ -46,92 +28,30 @@ export const Links: React.FC = () => {
         Берите и пользуйтесь
       </Text>
       <div className={cnLinks('List', ['tpl-grid tpl-grid_m-ratio_1-1-1'])}>
-        <a
+        <LinksCard
+          className={themeClassNames.color.accent}
+          view="storybook"
+          icon={IconStorybook}
+          title="Витрина компонентов и документация"
           href="https://consta-uikit.vercel.app/"
-          className={cnLinks('Card', { view: 'Storybook' }, [themeClassNames.color.accent])}
-        >
-          <div className={cnLinks('CardContent')}>
-            <IconStorybook size="m" view="primary" className={cnLinks('Logo')} />
-            <Text
-              className={cnLinks('CardTitle', ['decorator decorator_indent-b_s'])}
-              size="xl"
-              weight="bold"
-              lineHeight="s"
-            >
-              <span>Витрина компонентов и документация</span>
-            </Text>
-            <Text
-              className={cnLinks('CardDescription', ['decorator decorator_indent-b_xl'])}
-              size="l"
-              as="p"
-            >
-              Как использовать дизайн-систему, темы и описание компонентов. Тут можно поиграться
-              с размерами, цветами и другими параметрами компонентов.
-            </Text>
-          </div>
-          <div className={cnLinks('CardFooter')}>
-            <Button size="s" view="clear" iconLeft={IconCopy} iconSize="m" onlyIcon />
-            {More}
-          </div>
-        </a>
-
-        <a
+          description="Как использовать дизайн-систему, темы и описание компонентов. Тут можно поиграться с размерами, цветами и другими параметрами компонентов."
+        />
+        <LinksCard
+          className={themeClassNames.color.invert}
+          view="figma"
+          icon={IconFigma}
+          title="Библиотека в Figma"
           href="https://www.figma.com/@Consta"
-          className={cnLinks('Card', { view: 'Figma' }, [themeClassNames.color.invert])}
-        >
-          <div className={cnLinks('CardContent')}>
-            <IconFigma size="m" view="primary" className={cnLinks('Logo')} />
-            <Text
-              className={cnLinks('CardTitle', ['decorator decorator_indent-b_s'])}
-              size="xl"
-              weight="bold"
-              lineHeight="s"
-            >
-              <span>Библиотека в Figma</span>
-            </Text>
-            <Text
-              className={cnLinks('CardDescription', ['decorator decorator_indent-b_xl'])}
-              size="l"
-              as="p"
-            >
-              Набор компонентов для создания макетов проекта в Figma Community. Отправьте эту ссылку
-              дизайнеру — он разберётся.
-            </Text>
-          </div>
-          <div className={cnLinks('CardFooter')}>
-            <Button size="s" view="clear" iconLeft={IconCopy} iconSize="m" onlyIcon />
-            {More}
-          </div>
-        </a>
-
-        <a
+          description="Набор компонентов для создания макетов проекта в Figma Community. Отправьте эту ссылку дизайнеру — он разберётся."
+        />
+        <LinksCard
+          className={themeClassNames.color.invert}
+          view="github"
+          icon={IconGithub}
+          title="React-библиотека"
           href="https://github.com/gazprom-neft/consta-uikit"
-          className={cnLinks('Card', { view: 'Github' }, [themeClassNames.color.invert])}
-        >
-          <div className={cnLinks('CardContent')}>
-            <IconGithub size="m" view="primary" className={cnLinks('Logo')} />
-            <Text
-              className={cnLinks('CardTitle', ['decorator decorator_indent-b_s'])}
-              size="xl"
-              weight="bold"
-              lineHeight="s"
-            >
-              <span>React-библиотека</span>
-            </Text>
-            <Text
-              className={cnLinks('CardDescription', ['decorator decorator_indent-b_xl'])}
-              size="l"
-              as="p"
-            >
-              NPM пакет с библиотекой на React, TypeScript и PostCSS. Отправьте эту ссылку фронтенд
-              разработчику — он знает, что с ней делать.
-            </Text>
-          </div>
-          <div className={cnLinks('CardFooter')}>
-            <Button size="s" view="clear" iconLeft={IconCopy} iconSize="m" onlyIcon />
-            {More}
-          </div>
-        </a>
+          description="NPM пакет с библиотекой на React, TypeScript и PostCSS. Отправьте эту ссылку фронтенд разработчику — он знает, что с ней делать."
+        />
       </div>
     </section>
   );
