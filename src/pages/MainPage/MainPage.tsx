@@ -3,6 +3,7 @@ import './MainPage.css';
 import React from 'react';
 
 import { About } from '@/pages/MainPage/About/About';
+import { Async } from '@/pages/MainPage/Async/Async';
 import { FAQ } from '@/pages/MainPage/FAQ/FAQ';
 import { Footer } from '@/pages/MainPage/Footer/Footer';
 import { HeroScreen } from '@/pages/MainPage/HeroScreen/HeroScreen';
@@ -26,5 +27,6 @@ export const MainPage: React.FC = () => (
     <FAQ />
     <Links />
     <Footer />
+    <Async />
   </div>
 );

@@ -18,6 +18,10 @@ import {
 } from '@consta/uikit/Theme';
 import { combine, declareAction, declareAtom, map } from '@reatom/core';
 
+import { n } from '@/utils/reatom';
+
+const nTheme = n('theme');
+
 export const presets = [
   {
     name: 'Газпром',
@@ -115,29 +119,29 @@ function getColorMod(preset: Preset, color: Colors): ThemePreset['color'] {
   return colorsMods[preset.value][color.value];
 }
 
-export const setColorAction = declareAction<Colors>();
-export const setFontAction = declareAction<Font>();
-export const setSizeAction = declareAction<Size>();
-export const setSpaceAction = declareAction<Space>();
-export const setPresetAction = declareAction<Preset>();
+export const setColorAction = declareAction<Colors>(nTheme('setColorAction'));
+export const setFontAction = declareAction<Font>(nTheme('setFontAction'));
+export const setSizeAction = declareAction<Size>(nTheme('setSizeAction'));
+export const setSpaceAction = declareAction<Space>(nTheme('setSpaceAction'));
+export const setPresetAction = declareAction<Preset>(nTheme('setPresetAction'));
 
-export const presetAtom = declareAtom<Preset>(presetDefault, (on) =>
+export const presetAtom = declareAtom<Preset>(nTheme('presetAtom'), presetDefault, (on) =>
   on(setPresetAction, (state, preset) => preset),
 );
 
-export const colorAtom = declareAtom<Colors>(colorDefault, (on) =>
+export const colorAtom = declareAtom<Colors>(nTheme('colorAtom'), colorDefault, (on) =>
   on(setColorAction, (state, color) => color),
 );
 
-export const fontAtom = declareAtom<Font>(fontDefault, (on) =>
+export const fontAtom = declareAtom<Font>(nTheme('fontAtom'), fontDefault, (on) =>
   on(setFontAction, (state, font) => font),
 );
 
-export const sizeAtom = declareAtom<Size>(sizeDefault, (on) =>
+export const sizeAtom = declareAtom<Size>(nTheme('sizeAtom'), sizeDefault, (on) =>
   on(setSizeAction, (state, size) => size),
 );
 
-export const spaceAtom = declareAtom<Space>(spaceDefault, (on) =>
+export const spaceAtom = declareAtom<Space>(nTheme('spaceAtom'), spaceDefault, (on) =>
   on(setSpaceAction, (state, space) => space),
 );
 
