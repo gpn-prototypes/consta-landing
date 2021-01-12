@@ -3,8 +3,6 @@ import './Variety.css';
 import React from 'react';
 import { Text } from '@consta/uikit/Text';
 
-import { Showroom } from '../Showroom/Showroom';
-
 import { cn } from '@/utils/bem';
 
 const cnVariety = cn('Variety');
@@ -30,10 +28,6 @@ export const Variety: React.FC = () => {
         Наша библиотека Consta обладает гибкой и очень лёгкой тематизацией. Посмотрите и убедитесь
         в этом сами, переключая варианты тем на этой странице.
       </Text>
-
-      <div className={cnVariety('Showroom')}>
-        <Showroom />
-      </div>
     </section>
   );
 };

@@ -7,15 +7,15 @@ import { IconThumbUp } from '@consta/uikit/IconThumbUp';
 import { Text } from '@consta/uikit/Text';
 import { useTheme } from '@consta/uikit/Theme';
 
+import { AboutVideo } from './AboutVideo/AboutVideo';
+
 import IconFigma from '@/icons/Figma.icon.svg';
 import IconGithub from '@/icons/Github.icon.svg';
 import IconStorybook from '@/icons/Storybook.icon.svg';
-// import AboutImage from '../../../../images/AboutImage.png';
 import { cn } from '@/utils/bem';
 
 const cnAbout = cn('About');
 const cnLinks = cn('LinksToLibrary');
-const cnVideo = cn('VideoButton');
 
 const More = (
   <Text
@@ -64,13 +64,7 @@ export const About: React.FC = () => {
           </Text>
         </div>
         <div className="tpl-grid__fraction tpl-grid__fraction_m-col_4 ">
-          {/* <img src={AboutImage} alt="Artistic 3D visualisation of Consta components" /> */}
-          <button className={cnAbout('VideoButton', [cnVideo()])}>
-            <div className={cnVideo('Play')}>
-              <div className={cnVideo('Triangle')}></div>
-            </div>
-            <div className={cnVideo('Content')}>Cмотреть видео</div>
-          </button>
+          <AboutVideo />
         </div>
       </div>
       <Text

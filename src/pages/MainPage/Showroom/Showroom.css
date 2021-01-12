@@ -1,12 +1,17 @@
 .Consta--Showroom {
-  position: relative;
-  left: 50%;
-  overflow: hidden;
-  width: 1800px;
-  padding: var(--space-2xl) 0;
-  transform: translateX(-50%);
+  /* position: relative; */
 
-  &::before,
+  /* left: 50%; */
+
+  /* overflow: hidden; */
+
+  /* width: 100%; */
+
+  /* padding: var(--space-2xl) 0; */
+
+  /* transform: translateX(-50%); */
+
+  /* &::before,
   &::after {
     content: '';
     position: absolute;
@@ -26,7 +31,7 @@
 
   &::after {
     right: -12px;
-  }
+  } */
 
   &-Row {
     position: relative;
@@ -56,7 +61,8 @@
 
   &-Group {
     position: absolute;
-    left: 50%;
+
+    /* left: 50%; */
     display: flex;
     align-items: center;
 
@@ -70,17 +76,17 @@
   }
 
   &-Row:nth-child(2n + 1) &-Group {
-    transform: translateX(-40%);
+    /* transform: translateX(-40%); */
     animation: move 10s ease-in-out infinite alternate both;
   }
 
   &-Row:nth-child(2n) &-Group {
-    transform: translateX(-60%);
+    /* transform: translateX(-60%); */
     animation: move 10s ease-in-out infinite alternate-reverse both;
   }
 }
 
-@keyframes move {
+/* @keyframes move {
   from {
     transform: translateX(-40%);
   }
@@ -88,4 +94,4 @@
   100% {
     transform: translateX(-60%);
   }
-}
+} */
