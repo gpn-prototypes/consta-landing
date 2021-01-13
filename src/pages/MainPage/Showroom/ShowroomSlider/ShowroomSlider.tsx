@@ -1,6 +1,6 @@
 import './ShowroomSlider.css';
 
-import React from 'react';
+import React, { useEffect, useMemo, useRef } from 'react';
 
 import { cn } from '@/utils/bem';
 
@@ -11,8 +11,24 @@ type Props = {
 const cnShowroomSlider = cn('ShowroomSlider');
 
 export const ShowroomSlider: React.FC<Props> = ({ rows }) => {
+  const ref = useRef<HTMLDivElement>(null);
+
+  const windowHeight = useMemo(() => window.innerHeight, []);
+
+  const listner = () => {
+    const scroll = window.pageYOffset / windowHeight / 10;
+    ref.current?.style.setProperty('--delay', `${scroll - Math.floor(scroll)}`);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', listner);
+    return () => {
+      window.removeEventListener('scroll', listner);
+    };
+  }, []);
+
   return (
-    <div className={cnShowroomSlider()}>
+    <div ref={ref} className={cnShowroomSlider()}>
       {rows.map((row, index) => (
         <div key={index} className={cnShowroomSlider('Row')}>
           <div className={cnShowroomSlider('Group')}>

@@ -86,7 +86,7 @@
   }
 }
 
-/* @keyframes move {
+@keyframes move {
   from {
     transform: translateX(-40%);
   }
@@ -94,4 +94,4 @@
   100% {
     transform: translateX(-60%);
   }
-} */
+}
