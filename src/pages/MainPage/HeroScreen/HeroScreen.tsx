@@ -7,6 +7,7 @@ import { Text } from '@consta/uikit/Text';
 import { Picture } from '@/components/Picture/Picture';
 import IconFigma from '@/icons/Figma.icon.svg';
 import IconGithub from '@/icons/Github.icon.svg';
+import ConstaLogo from '@/images/ConstaLogo.image.svg';
 import HeroImage_375_1x_dark from '@/images/HeroImage/Dark/HeroImage_375_1x.jpg';
 import HeroImage_375_2x_dark from '@/images/HeroImage/Dark/HeroImage_375_2x.jpg';
 import HeroImage_375_3x_dark from '@/images/HeroImage/Dark/HeroImage_375_3x.jpg';
@@ -41,7 +42,7 @@ export const HeroScreen: React.FC = () => {
             as="h1"
             lineHeight="xs"
           >
-            Consta
+            <ConstaLogo className={cnHeroScreen('Logo')} />
             <Text
               className={cnHeroScreen('SubTitle')}
               size="3xl"

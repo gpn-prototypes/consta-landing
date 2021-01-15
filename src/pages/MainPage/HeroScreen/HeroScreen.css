@@ -2,6 +2,12 @@
   position: relative;
   z-index: 1;
 
+  &-Logo {
+    --logo-color-1: var(--color-bg-normal);
+    --logo-color-2: var(--color-bg-link);
+    max-width: 340px;
+  }
+
   &-Content {
     max-width: 600px;
 

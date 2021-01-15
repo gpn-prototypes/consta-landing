@@ -538,6 +538,35 @@ module.exports = function (webpackEnv) {
                 },
               ],
             },
+            {
+              test: /(\/|\\)images(\/|\\)[\w\.\-\/]*\.svg$/,
+              use: [
+                {
+                  loader: '@svgr/webpack',
+                  options: {
+                    template: (
+                      { template },
+                      opts,
+                      { imports, componentName, props, jsx, exports },
+                    ) => {
+                      return template.ast`
+                                  ${imports}
+
+                                  const Icon = (${props}) => {
+                                    props = { ...props };
+                                    return ${jsx};
+                                  };
+
+                                  export default Icon
+                            `;
+                    },
+                    plugins: ['@svgr/plugin-svgo', '@svgr/plugin-jsx', '@svgr/plugin-prettier'],
+                    dimensions: false,
+                    svgo: true,
+                  },
+                },
+              ],
+            },
             // "file" loader makes sure those assets get served by WebpackDevServer.
             // When you `import` an asset, you get its (virtual) filename.
             // In production, they would get copied to the `build` folder.
