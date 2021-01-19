@@ -48,6 +48,7 @@ module.exports = {
     },
   ],
   rules: {
+    'react/display-name': 'off',
     '@typescript-eslint/no-empty-function': 'off',
     '@typescript-eslint/no-redeclare': 'off',
     'triple-slash-reference': 0,

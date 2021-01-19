@@ -81,64 +81,6 @@ export const Showroom: React.FC = () => {
 
   const getItemLabel = (option: SelectOption): string => option.label;
 
-  // const [valueSwitch1, setValueSwitch1] = useState<boolean>(false);
-
-  /* const [move, setMove] = useState({
-    moveValue: 0,
-  });
-
-  const section = useRef(null);
-
-  const whileScrolling = () => {
-    const topPosition = (element: any) => element.getBoundingClientRect().top;
-    const bottomPosition = (element: any) => element.getBoundingClientRect().bottom;
-    const sectionStart = topPosition(section.current) + window.pageYOffset;
-    const sectionEnd = bottomPosition(section.current) + window.pageYOffset;
-
-    const scrollPosition = window.scrollY + window.innerHeight;
-    const sectionScrollTop = sectionStart - window.scrollY;
-    const sectionHeight = sectionEnd - sectionStart;
-    const moveOffset = sectionScrollTop / (sectionHeight - window.innerHeight);
-    // скролл от верха секции / ( высота секции - высота окна )
-
-    if (sectionStart < scrollPosition && scrollPosition < sectionEnd) {
-      setMove((state) => ({ ...state, moveValue: moveOffset }));
-    }
-    // console.log('topToWindow = ' + topPosition(section.current) + ' topToPage = ' + sectionStart);
-    console.log('sectionHeight = ' + sectionHeight);
-    // console.log('moveOffset = ' + moveOffset);
-
-    return () => window.removeEventListener('scroll', whileScrolling);
-  };
-
-  window.addEventListener('scroll', whileScrolling);
-
-  useEffect(() => {
-    const topPosition = (element: any) => element.getBoundingClientRect().top;
-    const bottomPosition = (element: any) => element.getBoundingClientRect().bottom;
-    const sectionStart = topPosition(section.current) + window.pageYOffset;
-    const sectionEnd = bottomPosition(section.current) + window.pageYOffset;
-
-    const onScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight;
-      const sectionScrollTop = sectionStart - window.scrollY;
-      const sectionHeight = sectionEnd - sectionStart;
-      const moveOffset = sectionScrollTop / (sectionHeight - window.innerHeight);
-      // скролл от верха секции / ( высота секции - высота окна )
-
-      console.log('sectionTop = ' + topPosition(section.current) + ' sectionStart = ' + sectionStart);
-      // console.log('sectionEnd = ' + sectionEnd);
-      // console.log('moveOffset = ' + moveOffset);
-
-      if (sectionStart < scrollPosition && scrollPosition < sectionEnd) {
-        setMove((state) => ({ ...state, moveValue: moveOffset }));
-      }
-    };
-
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []); */
-
   return (
     <>
       <ShowroomSlider

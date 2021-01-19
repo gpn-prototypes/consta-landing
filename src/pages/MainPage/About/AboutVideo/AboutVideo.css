@@ -108,6 +108,10 @@
     }
   }
 
+  &-ModalRoot.Modal {
+    z-index: 9999;
+  }
+
   &-YouTube {
     position: absolute;
     top: 0;

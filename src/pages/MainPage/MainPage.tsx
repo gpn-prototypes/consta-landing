@@ -2,7 +2,7 @@ import './MainPage.css';
 
 import React from 'react';
 
-import { Header } from '@/components/Header/Header';
+import { HeaderContainer } from '@/containers/HeaderContainer/HeaderContainer';
 import { About } from '@/pages/MainPage/About/About';
 import { FAQ } from '@/pages/MainPage/FAQ/FAQ';
 import { Footer } from '@/pages/MainPage/Footer/Footer';
@@ -19,7 +19,7 @@ const cnMainPage = cn('MainPage');
 
 export const MainPage: React.FC = () => (
   <div className={cnMainPage()}>
-    <Header />
+    <HeaderContainer />
     <HeroScreen />
     <About />
     <Why />

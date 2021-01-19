@@ -17,7 +17,12 @@ export const AboutVideo: React.FC = () => {
         </div>
         <div className={cnAboutVideo('Content')}>Cмотреть видео</div>
       </button>
-      <Modal className={cnAboutVideo('Modal')} isOpen={open} onOverlayClick={() => setOpen(false)}>
+      <Modal
+        rootClassName={cnAboutVideo('ModalRoot')}
+        className={cnAboutVideo('Modal')}
+        isOpen={open}
+        onOverlayClick={() => setOpen(false)}
+      >
         <iframe
           className={cnAboutVideo('YouTube')}
           title={cnAboutVideo('YouTube')}

@@ -69,8 +69,6 @@ export const Picture: Picture = React.forwardRef((props, ref) => {
     const keys = noSortKeys.sort((a, b) => Number(b) - Number(a));
     const defautlImageKey = '0';
 
-    console.log(keys);
-
     const getDefaultImageSrc = () => {
       const src = images[defautlImageKey];
       if (!src) {
@@ -93,7 +91,6 @@ export const Picture: Picture = React.forwardRef((props, ref) => {
     return (
       <picture {...otherProps} ref={ref}>
         {keys.map((key) => {
-          console.log(key);
           if (key === defautlImageKey) {
             return null;
           }

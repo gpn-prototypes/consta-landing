@@ -1,8 +1,9 @@
 import './HeroScreen.css';
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Button } from '@consta/uikit/Button';
 import { Text } from '@consta/uikit/Text';
+import { useAction } from '@reatom/react';
 
 import { Picture } from '@/components/Picture/Picture';
 import IconFigma from '@/icons/Figma.icon.svg';
@@ -26,13 +27,28 @@ import HeroImage_375_3x_display from '@/images/HeroImage/Display/HeroImage_375_3
 import HeroImage_720_1x_display from '@/images/HeroImage/Display/HeroImage_720_1x.jpg';
 import HeroImage_720_2x_display from '@/images/HeroImage/Display/HeroImage_720_2x.jpg';
 import HeroImage_720_3x_display from '@/images/HeroImage/Display/HeroImage_720_3x.jpg';
+import { setFixedAction } from '@/modules/header';
 import { cn } from '@/utils/bem';
 
 const cnHeroScreen = cn('HeroScreen');
 
 export const HeroScreen: React.FC = () => {
+  const setFixedHeader = useAction(setFixedAction);
+  const ref = useRef<HTMLDivElement>(null);
+
+  const listner = () => {
+    setFixedHeader(window.pageYOffset >= (ref.current?.offsetHeight || 0));
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', listner);
+    return () => {
+      window.removeEventListener('scroll', listner);
+    };
+  }, []);
+
   return (
-    <div className="Container Section">
+    <div ref={ref} className="Container Section">
       <section className={cnHeroScreen()}>
         <div className={cnHeroScreen('Content')}>
           <Text

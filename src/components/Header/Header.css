@@ -1,5 +1,4 @@
 .Consta--Header {
-  position: absolute;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -13,26 +12,18 @@
     transform: translateY(-10%);
   }
 
-  &-ConstaLogo {
-    --logo-color-1: var(--color-typo-link);
-    --logo-color-2: var(--color-typo-link);
-    display: none;
-    width: 100%;
-    max-width: clamp(90px, 20vw, 120px);
-  }
-
   &-Menu {
-    display: none;
+    display: flex;
     justify-content: end;
-
-    @media (min-width: 720px) {
-      display: flex;
-    }
   }
 
   &-Item:not(:first-child) {
-    --item-space: var(--space-2xl);
+    --item-space: var(--space-xs);
     margin-left: var(--item-space);
+
+    @media (min-width: 1024px) {
+      --item-space: var(--space-2xl);
+    }
   }
 
   &-Link {
@@ -56,43 +47,6 @@
 
     @media (min-width: 720px) {
       display: none;
-    }
-  }
-
-  &_view {
-    &_consta {
-      position: fixed;
-      z-index: 100;
-      top: 0;
-      left: 0;
-      padding: min(3vw, var(--space-s)) min(5vw, var(--space-4xl));
-
-      & .Consta--Header {
-        &-ConstaLogo {
-          display: block;
-        }
-
-        &-Logo {
-          display: none;
-        }
-
-        &-Menu {
-          display: flex;
-        }
-
-        &-Item {
-          --item-space: var(--space-xs);
-          @media (min-width: 1024px) {
-            --item-space: var(--space-2xl);
-          }
-        }
-
-        &-Link {
-          @media (max-width: 719px) {
-            font-size: 0;
-          }
-        }
-      }
     }
   }
 }
