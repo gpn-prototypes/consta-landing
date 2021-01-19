@@ -56,7 +56,7 @@ export const HeroScreen: React.FC = () => {
           </Text>
           <div className={cnHeroScreen('Links')}>
             <Text
-              className="decorator decorator_indent-b_xl"
+              className="decorator decorator_indent-b_m"
               size="l"
               weight="regular"
               view="secondary"

@@ -5,7 +5,7 @@
   &-Logo {
     --logo-color-1: var(--color-bg-normal);
     --logo-color-2: var(--color-bg-link);
-    max-width: 340px;
+    max-width: clamp(200px, 30vw, 340px);
   }
 
   &-Content {

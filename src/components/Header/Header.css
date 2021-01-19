@@ -1,0 +1,98 @@
+.Consta--Header {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: min(3vw, var(--space-m)) min(5vw, var(--space-4xl));
+  background-color: var(--color-bg-default);
+
+  &-Logo {
+    width: 100%;
+    max-width: clamp(200px, 30vw, 264px);
+    transform: translateY(-10%);
+  }
+
+  &-ConstaLogo {
+    --logo-color-1: var(--color-typo-link);
+    --logo-color-2: var(--color-typo-link);
+    display: none;
+    width: 100%;
+    max-width: clamp(90px, 20vw, 120px);
+  }
+
+  &-Menu {
+    display: none;
+    justify-content: end;
+
+    @media (min-width: 720px) {
+      display: flex;
+    }
+  }
+
+  &-Item:not(:first-child) {
+    --item-space: var(--space-2xl);
+    margin-left: var(--item-space);
+  }
+
+  &-Link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: color 0.16s;
+
+    &:hover {
+      color: var(--color-typo-link);
+
+      & .Consta--Header-Icon {
+        opacity: 1;
+      }
+    }
+  }
+
+  &-Icon {
+    opacity: 0.7;
+    transition: opacity 0.16s;
+
+    @media (min-width: 720px) {
+      display: none;
+    }
+  }
+
+  &_view {
+    &_consta {
+      position: fixed;
+      z-index: 100;
+      top: 0;
+      left: 0;
+      padding: min(3vw, var(--space-s)) min(5vw, var(--space-4xl));
+
+      & .Consta--Header {
+        &-ConstaLogo {
+          display: block;
+        }
+
+        &-Logo {
+          display: none;
+        }
+
+        &-Menu {
+          display: flex;
+        }
+
+        &-Item {
+          --item-space: var(--space-xs);
+          @media (min-width: 1024px) {
+            --item-space: var(--space-2xl);
+          }
+        }
+
+        &-Link {
+          @media (max-width: 719px) {
+            font-size: 0;
+          }
+        }
+      }
+    }
+  }
+}
