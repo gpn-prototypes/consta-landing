@@ -11,5 +11,5 @@ const cnSnackBarContainer = cn('SnackBarContainer');
 
 export const SnackBarContainer: React.FC = () => {
   const items = useAtom(snackBarAtom);
-  return <SnackBar className={cnSnackBarContainer()} items={items} />;
+  return items.length > 0 ? <SnackBar className={cnSnackBarContainer()} items={items} /> : null;
 };
