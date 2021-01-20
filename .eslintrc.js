@@ -48,6 +48,7 @@ module.exports = {
     },
   ],
   rules: {
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
     'react/display-name': 'off',
     '@typescript-eslint/no-empty-function': 'off',
     '@typescript-eslint/no-redeclare': 'off',

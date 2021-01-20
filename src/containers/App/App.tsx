@@ -5,6 +5,7 @@ import React, { useEffect } from 'react';
 import { cnTheme, Theme } from '@consta/uikit/Theme';
 import { useAtom } from '@reatom/react';
 
+import { SnackBarContainer } from '@/containers/SnackBarContainer/SnackBarContainer';
 import { themeAtom } from '@/modules/theme';
 import { cn } from '@/utils/bem';
 
@@ -25,6 +26,7 @@ export const App: React.FC = ({ children }) => {
   return (
     <Theme className={cnApp(null, ['theme_gap_large'])} preset={theme}>
       {children}
+      <SnackBarContainer />
     </Theme>
   );
 };
