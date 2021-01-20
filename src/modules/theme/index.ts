@@ -1,6 +1,11 @@
 // отключил правило так как нужно подключить стили из пресетов
 /* eslint-disable no-unused-vars */
-import './Theme_color_tupoilDefault.css';
+import './Theme_color_altDark.css';
+import './Theme_color_altDefault.css';
+import './Theme_color_altDisplay.css';
+import './Theme_color_alt2Dark.css';
+import './Theme_color_alt2Default.css';
+import './Theme_color_alt2Display.css';
 import './Theme_font_gpnPromo.css';
 import './Theme_size_gpnPromo.css';
 import './Theme_space_gpnPromo.css';
@@ -24,14 +29,19 @@ const nTheme = n('theme');
 
 export const presets = [
   {
-    name: 'Газпром',
+    name: 'Газпром нефть',
     value: 0,
     brandColor: '#0071B2',
   },
   {
-    name: 'Тупойл',
+    name: 'Ва-банк',
     value: 1,
-    brandColor: '#f90022',
+    brandColor: '#b80b0b',
+  },
+  {
+    name: 'Алюмикель',
+    value: 2,
+    brandColor: '#730bb8',
   },
 ];
 type Preset = typeof presets[number];
@@ -98,19 +108,36 @@ const colorsMods = [
   ],
   [
     {
-      primary: 'tupoilDefault',
-      accent: 'tupoilDark',
-      invert: 'tupoilDark',
+      primary: 'altDefault',
+      accent: 'altDark',
+      invert: 'altDark',
     },
     {
-      primary: 'tupoilDark',
-      accent: 'tupoilDark',
-      invert: 'gpnDefault',
+      primary: 'altDark',
+      accent: 'altDark',
+      invert: 'altDefault',
     },
     {
-      primary: 'tupoilDisplay',
-      accent: 'tupoilDark',
-      invert: 'tupoilDefault',
+      primary: 'altDisplay',
+      accent: 'altDark',
+      invert: 'altDefault',
+    },
+  ],
+  [
+    {
+      primary: 'alt2Default',
+      accent: 'alt2Dark',
+      invert: 'alt2Dark',
+    },
+    {
+      primary: 'alt2Dark',
+      accent: 'alt2Dark',
+      invert: 'alt2Default',
+    },
+    {
+      primary: 'alt2Display',
+      accent: 'alt2Dark',
+      invert: 'alt2Default',
     },
   ],
 ] as const;
