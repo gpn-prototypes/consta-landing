@@ -146,33 +146,34 @@ function getColorMod(preset: Preset, color: Colors): ThemePreset['color'] {
   return colorsMods[preset.value][color.value];
 }
 
-export const setColorAction = declareAction<Colors>(nTheme('setColorAction'));
-export const setFontAction = declareAction<Font>(nTheme('setFontAction'));
-export const setSizeAction = declareAction<Size>(nTheme('setSizeAction'));
-export const setSpaceAction = declareAction<Space>(nTheme('setSpaceAction'));
-export const setPresetAction = declareAction<Preset>(nTheme('setPresetAction'));
+export const setColorAction = declareAction<Colors>(nTheme('setColor'));
+export const setFontAction = declareAction<Font>(nTheme('setFont'));
+export const setSizeAction = declareAction<Size>(nTheme('setSize'));
+export const setSpaceAction = declareAction<Space>(nTheme('setSpace'));
+export const setPresetAction = declareAction<Preset>(nTheme('setPreset'));
 
-export const presetAtom = declareAtom<Preset>(nTheme('presetAtom'), presetDefault, (on) =>
+export const presetAtom = declareAtom<Preset>(nTheme('preset'), presetDefault, (on) =>
   on(setPresetAction, (state, preset) => preset),
 );
 
-export const colorAtom = declareAtom<Colors>(nTheme('colorAtom'), colorDefault, (on) =>
+export const colorAtom = declareAtom<Colors>(nTheme('color'), colorDefault, (on) =>
   on(setColorAction, (state, color) => color),
 );
 
-export const fontAtom = declareAtom<Font>(nTheme('fontAtom'), fontDefault, (on) =>
+export const fontAtom = declareAtom<Font>(nTheme('font'), fontDefault, (on) =>
   on(setFontAction, (state, font) => font),
 );
 
-export const sizeAtom = declareAtom<Size>(nTheme('sizeAtom'), sizeDefault, (on) =>
+export const sizeAtom = declareAtom<Size>(nTheme('size'), sizeDefault, (on) =>
   on(setSizeAction, (state, size) => size),
 );
 
-export const spaceAtom = declareAtom<Space>(nTheme('spaceAtom'), spaceDefault, (on) =>
+export const spaceAtom = declareAtom<Space>(nTheme('space'), spaceDefault, (on) =>
   on(setSpaceAction, (state, space) => space),
 );
 
 export const themeAtom = map(
+  nTheme('theme'),
   combine([presetAtom, colorAtom, fontAtom, sizeAtom, spaceAtom]),
   ([preset, color, font, size, space]) => ({
     color: getColorMod(preset, color),

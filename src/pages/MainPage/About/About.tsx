@@ -1,12 +1,12 @@
 import './About.css';
 
 import React from 'react';
-import { Badge } from '@consta/uikit/Badge';
 import { IconForward } from '@consta/uikit/IconForward';
 import { IconThumbUp } from '@consta/uikit/IconThumbUp';
 import { Text } from '@consta/uikit/Text';
 import { useTheme } from '@consta/uikit/Theme';
 
+import { AboutVersionPackage } from './AboutVersionPackage/AboutVersionPackage';
 import { AboutVideo } from './AboutVideo/AboutVideo';
 
 import IconFigma from '@/icons/Figma.icon.svg';
@@ -15,6 +15,7 @@ import IconStorybook from '@/icons/Storybook.icon.svg';
 import { cn } from '@/utils/bem';
 
 const cnAbout = cn('About');
+
 const cnLinks = cn('LinksToLibrary');
 
 const More = (
@@ -157,7 +158,7 @@ export const About: React.FC = () => {
             <Text className={cnLinks('Text', ['decorator decorator_indent-b_s'])} size="xl" as="p">
               Библиотека компонентов в виде NPM пакета на Github.
             </Text>
-            <Badge label="v1.10.9" status="success" view="stroked" size="l" />
+            <AboutVersionPackage />
           </div>
 
           <div className={cnLinks('Footer', ['decorator decorator_distribute_between'])}>
