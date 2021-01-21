@@ -18,5 +18,5 @@ const Root: React.FC = () => {
     </context.Provider>
   );
 };
-//
+
 ReactDOM.render(<Root />, document.getElementById('root'));
