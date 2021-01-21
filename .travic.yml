@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - node
+script:
+  - yarn run build:storybook
+deploy:
+  provider: pages
+  skip_cleanup: true
+  local_dir: build
+  github_token: $GITHUB_TOKEN
+  on:
+    branch: master
+    node_js: 'node'
