@@ -315,7 +315,9 @@ module.exports = function (webpackEnv) {
         '@/modules': path.resolve(__dirname, '../src/modules'),
         '@/pages': path.resolve(__dirname, '../src/pages/'),
         '@/svg': path.resolve(__dirname, '../src/svg/'),
+        '@/icons': path.resolve(__dirname, '../src/icons/'),
         '@/utils': path.resolve(__dirname, '../src/utils/'),
+        '@/images': path.resolve(__dirname, '../src/images/'),
 
         // Support React Native Web
         // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
@@ -502,7 +504,7 @@ module.exports = function (webpackEnv) {
               ),
             },
             {
-              test: /\.svg$/,
+              test: /(\/|\\)icons(\/|\\)[\w\.\-\/]*\.svg$/,
               use: [
                 {
                   loader: '@svgr/webpack',
@@ -514,11 +516,48 @@ module.exports = function (webpackEnv) {
                     ) => {
                       return template.ast`
                                   ${imports}
-                                  const ${componentName} = (${props}) => {
+                                  import { createIcon } from '@consta/uikit/createIcon';
+
+                                  const Icon = (${props}) => {
                                     props = { ...props };
                                     return ${jsx};
                                   };
-                                  export default ${componentName};
+
+                                  export default createIcon({
+                                    m: Icon,
+                                    s: Icon,
+                                    xs: Icon,
+                                    name: 'Icon',
+                                  });
+                            `;
+                    },
+                    plugins: ['@svgr/plugin-svgo', '@svgr/plugin-jsx', '@svgr/plugin-prettier'],
+                    dimensions: false,
+                    svgo: true,
+                  },
+                },
+              ],
+            },
+            {
+              test: /(\/|\\)images(\/|\\)[\w\.\-\/]*\.svg$/,
+              use: [
+                {
+                  loader: '@svgr/webpack',
+                  options: {
+                    template: (
+                      { template },
+                      opts,
+                      { imports, componentName, props, jsx, exports },
+                    ) => {
+                      return template.ast`
+                                  ${imports}
+
+                                  const Icon = (${props}) => {
+                                    props = { ...props };
+                                    return ${jsx};
+                                  };
+
+                                  export default Icon
                             `;
                     },
                     plugins: ['@svgr/plugin-svgo', '@svgr/plugin-jsx', '@svgr/plugin-prettier'],
