@@ -8,7 +8,9 @@ import { IconCopy } from '@consta/uikit/IconCopy';
 import { IconForward } from '@consta/uikit/IconForward';
 import { Text } from '@consta/uikit/Text';
 import { withTooltip } from '@consta/uikit/withTooltip';
+import { useAction } from '@reatom/react';
 
+import { toClipboardAction } from '@/modules/clipboard';
 import { cn } from '@/utils/bem';
 
 export const cnLinksCard = cn('LinksCard');
@@ -27,9 +29,16 @@ type Props = PropsWithJsxAttributes<
 >;
 
 export const LinksCard: React.FC<Props> = (props) => {
-  const { className, view, title, description, icon: Icon, ...otherProps } = props;
+  const { className, view, title, description, icon: Icon, href, ...otherProps } = props;
+  const toClipboard = useAction(toClipboardAction);
+  const copyLink: ((event: React.MouseEvent<Element, MouseEvent>) => void) | undefined = href
+    ? (e) => {
+        e.preventDefault();
+        toClipboard({ copiedText: href, message: 'Ссылка скопирована' });
+      }
+    : undefined;
   return (
-    <a {...otherProps} className={cnLinksCard({ view }, [className])}>
+    <a {...otherProps} href={href} className={cnLinksCard({ view }, [className])}>
       <div className={cnLinksCard('Content')}>
         <Icon size="m" view="primary" className={cnLinksCard('Logo')} />
         <Text
@@ -49,7 +58,14 @@ export const LinksCard: React.FC<Props> = (props) => {
         </Text>
       </div>
       <div className={cnLinksCard('Footer')}>
-        <ButtonCopyLink size="s" view="clear" iconLeft={IconCopy} iconSize="m" onlyIcon />
+        <ButtonCopyLink
+          size="s"
+          view="clear"
+          iconLeft={IconCopy}
+          iconSize="m"
+          onlyIcon
+          onClick={copyLink}
+        />
         <Text
           className={cnLinksCard('More', [
             'decorator decorator_distribute_left decorator_vertical-align_center decorator_indent-r_s',
